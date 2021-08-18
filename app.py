@@ -1,5 +1,6 @@
 import click
 import json
+import os
 
 def parser_nginx_error_log(r: str) -> dict:
     r_split = r.split(" ")
@@ -72,6 +73,12 @@ def command(logfile: str, t: str, o: str) -> None:
 
     # Jika format tidak dikenali maka akan dianggap menjadi "text"
     out_type = "json" if t.lower() == "json" else "text"
+
+    # validasi jika logfile tidak dapat diakses
+    if not os.path.isfile(logfile):
+        print("{} tidak dapat di akses.".format(logfile))
+        return
+
 
     if out_type == "json":
         text_to_json(logfile, o)
