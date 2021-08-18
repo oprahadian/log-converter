@@ -7,7 +7,7 @@ Konversi log file
 ```bash
 cd log-converter
 
-docker build -t log-converter .
+make build
 ```
 
 ## Usage
