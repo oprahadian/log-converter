@@ -10,7 +10,7 @@ cd log-converter
 make build
 ```
 
-## Usage
+## Penggunaan
 
 ```bash
 docker run -it -v "$PWD":/usr/src/app -w /usr/src/app --rm log-converter --help
